@@ -1,0 +1,32 @@
+{
+  "name": "simple-fe-framework",
+  "version": "1.0.0",
+  "description": "A simple front end framework",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "node unittest",
+    "start": "open ",
+    "build-w": "nodemon --watch webpack.config.js --exec \"webpack --watch\""
+  },
+  "keywords": [
+    "front",
+    "end"
+  ],
+  "author": "lam",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.5",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "@types/node": "^10.12.10",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "ts-loader": "^5.3.1",
+    "typescript": "^3.1.6"
+  }
+}
