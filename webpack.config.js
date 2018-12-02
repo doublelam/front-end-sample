@@ -36,7 +36,12 @@ module.exports = {
     }, {
       test: /\.s(a|c)ss$/i,
       use: [MiniCssExtract.loader, 'css-loader', 'sass-loader']
-    }, {
+    }, 
+    {
+      test: /\.css$/i,
+      use: [MiniCssExtract.loader, 'css-loader']
+    },
+    {
       test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/i,
       use: [{
         loader: 'url-loader',

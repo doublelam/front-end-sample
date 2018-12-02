@@ -1,0 +1,73 @@
+$history-title-color: #cccccc
+$history-item-color: #999999
+$history-item-hover-color: #00b4cf
+
+.side-nav
+  background-color: $dark-gray
+  height: calc(100vh - 40px)
+  max-width: 100%
+  position: relative
+  width: 200px
+
+  .close-btn
+    color: $blue
+    display: none
+    font-size: 18px
+    overflow: auto
+    text-align: right
+
+    .icon-close
+      cursor: pointer
+      display: block
+      float: right
+      padding: 10px
+
+  .menu-item
+    align-items: center
+    color: $beige
+    cursor: pointer
+    display: flex
+    height: 45px
+    padding: 0 30px
+    user-select: none
+
+    &:hover,
+    &.active
+      background-color: $gray
+      color: $blue
+
+    .ico
+      font-size: 20px
+      margin-right: 20px
+
+    .title
+      font-size: 14px
+
+  .hostory
+    align-self: flex-end
+    bottom: 0
+    cursor: default
+    left: 0
+    position: absolute
+    width: 100%
+
+    .title
+      color: $history-title-color
+      font-size: 24px
+      padding: 10px
+
+    .history-container
+      height: 30vh
+      overflow: auto
+
+    .history-item
+      color: $history-item-color
+      font-size: 12px
+      list-style: inside
+      overflow-x: hidden
+      padding: 5px 10px
+      text-overflow: ellipsis
+      white-space: nowrap
+
+      &:hover
+        color: $history-item-hover-color

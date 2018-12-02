@@ -1,0 +1,47 @@
+include ./patch.pug
+.content
+  .profile-section
+    .sect-wrapper
+      +patch("Building", "icon-cog rotation-ani", 4, "patch-cog")
+    .sect-wrapper
+      +patch("Idle", "icon-coffee", 4, "patch-coff")
+    .sect-wrapper.type-items
+      ul.type-list-wrapper
+        each val in [{name: "ALL", count: 8}, {name: "PHYSICAL", count: 4}, {name: "VIRTUAL", count: 4}]
+          li.list-item
+            .name= val.name
+            .count= val.count
+  .tab-section
+    .tab-layout
+      ul.tabs
+        each val in [{name: "All", isActive: true}, {name: "Physical", isActive: false}, {name: "Virtual", isActive: false}]
+          li.tab-item(class= val.isActive ? "active" : "")= val.name
+      .operate-area
+        .search-area
+          i.icon-search
+          input.input(type="text")
+        .sort-area
+          .sort
+            i.icon-th-card
+          .sort.active
+            i.icon-th-list
+  ul.agents-container#agents-container
+    include ./agent.pug
+    -
+      const agents = [
+          {os: "windows", host: "xq.thoughtworks.com", status: "building", dns: "192.168.1.1", dir: "dir/lib/dir", packages: ["Ubuntu", "Linux", "Safari"]},
+          {os: "ubuntu", host: "xw.thoughtworks.com", status: "building", dns: "192.168.1.1", dir: "dir/lib/dir", packages: ["Ubuntu", "Linux", "Safari"]},
+          {os: "cent", host: "xe.thoughtworks.com", status: "building", dns: "192.168.1.1", dir: "dir/lib/dir", packages: ["Ubuntu", "Linux", "Safari"]},
+          {os: "suse", host: "xr.thoughtworks.com", status: "idle", dns: "192.168.1.1", dir: "dir/lib/dir", packages: ["Ubuntu", "Linux", "Safari"]},
+          {os: "debin", host: "xt.thoughtworks.com", status: "building", dns: "192.168.1.1", dir: "dir/lib/dir", packages: ["Ubuntu", "Linux", "Safari"]},
+          {os: "windows", host: "xy.thoughtworks.com", status: "idle", dns: "192.168.1.1", dir: "dir/lib/dir", packages: ["Ubuntu", "Linux", "Safari"]},
+          {os: "windows", host: "xu.thoughtworks.com", status: "building", dns: "192.168.1.1", dir: "dir/lib/dir", packages: ["Ubuntu", "Linux", "Safari"]},
+          {os: "windows", host: "xi.thoughtworks.com", status: "idle", dns: "192.168.1.1", dir: "dir/lib/dir", packages: ["Ubuntu", "Linux", "Safari"]},
+        ]
+    each v in agents
+      +agent(v.os, v.host, v.status, v.dns, v.dir, v.packages)
+
+    
+
+
+        

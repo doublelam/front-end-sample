@@ -1,0 +1,21 @@
+nav.side-nav#side-nav
+  .close-btn
+    i.icon-close#nav-close
+  ul.menu-container
+    -
+      const menuList = [
+        {iconClass: "icon-dashboard", title: "DASHBOARD", active: false}, 
+        {iconClass: "icon-sitemap", title: "AGENT", active: true}, 
+        {iconClass: "icon-boat", title: "MY CRUISE", active: false}, 
+        {iconClass: "icon-life-bouy", title: "HELP", active: false}
+      ]
+    each val in menuList
+      li.menu-item(class=val.active ? "active" : "")
+        i.ico(class= val.iconClass)
+        span.title= val.title
+  .hostory
+    .title History
+    ul.history-container
+      each val in new Array(50).join(",").split(",").map(v => `hjahhfshk${v}/Acceptance_test_jkajhjkh`)
+        li.history-item= val
+

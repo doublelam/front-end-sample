@@ -1,0 +1,51 @@
+mixin agent(os, host, status, dns, dir, packages)
+  li.agent-item(class= `agent-${status}`)
+    .img-wrapper
+      - 
+        let url = ""
+        switch(os) {
+          case "windows": url = require("../../resources/assets/os-icons/windows.png");break;
+          case "ubuntu": url = require("../../resources/assets/os-icons/ubuntu.png");break;
+          case "debin": url = require("../../resources/assets/os-icons/debin.png");break;
+          case "cent": url = require("../../resources/assets/os-icons/cent_os.png");break;
+          case "suse": url = require("../../resources/assets/os-icons/suse.png");break;
+        }
+      img.img(src= url)
+    .detail
+      .row
+        .host 
+          i.icon-desktop
+          span.host-name= host
+        - const bac = status === "building" ? "back-yellow" : "back-green"
+        .badge(class= bac)= status
+        .host-dns
+          i.icon-info
+          span= dns
+        .dir
+          i.icon-folder
+          span= dir
+      .row
+        .modules
+          .add
+            i.icon-plus
+          .popup
+            .mask
+            .content
+              .close
+                i.icon-close
+              .title Separate multiple resource name with commas
+              input.input(placeholder="e.g. Chrome,Firefox")
+              .btns-wrapper
+                button.btn-positive.btn-add Add Resources
+                button.btn-negative.btn-cancel Cancel
+
+
+          ul.packages
+            each val in packages
+              li.package
+                span.name= val
+                i.icon-trash
+        if status === "building"
+          button.btn-positive.deny-button
+            i.icon-deny
+            span Deny

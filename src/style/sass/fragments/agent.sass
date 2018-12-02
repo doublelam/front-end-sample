@@ -1,0 +1,173 @@
+.agent-item
+  align-items: center
+  background-color: $white
+  display: flex
+  font-size: 14px
+  margin-bottom: 10px
+  padding: 0 10px
+
+  .img-wrapper
+    flex: none
+    width: 80px
+
+    .img
+      display: block
+      width: 100%
+
+  .detail
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+    justify-content: space-between
+
+    .row
+      align-items: center
+      display: flex
+      flex-wrap: wrap
+      padding: 10px
+
+      &:nth-child(2)
+        justify-content: space-between
+
+      i
+        color: $text-dark-disabled
+        font-size: 16px
+        margin-right: 5px
+
+      .host
+        align-items: center
+        display: flex
+        margin-right: 10px
+
+        .host-name
+          color: $blue
+          font-weight: bold
+
+      .badge
+        color: $beige
+        margin-right: 10px
+        padding: 0 5px
+
+      .host-dns
+        align-items: center
+        display: flex
+        margin-right: 10px
+
+      .dir
+        align-items: center
+        display: flex
+
+      .modules
+        display: flex
+        position: relative
+
+        .add
+          align-items: center
+          background-color: $blue
+          cursor: pointer
+          display: flex
+          flex: none
+          height: 24px
+          justify-content: center
+          margin-right: 10px
+          width: 26px
+
+          i
+            color: $white
+            font-size: 18px
+            margin-right: 0
+
+        .popup
+          display: none
+          left: 0
+          position: absolute
+          top: 24px
+          z-index: 1
+
+          .mask
+            height: 100vh
+            left: 0
+            position: fixed
+            top: 0
+            width: 100vw
+            z-index: 1
+
+          .content
+            background-color: $white
+            border: 1px solid $blue
+            box-shadow: $shadow-popup
+            color: $text-dark-secondary
+            margin-left: -18px
+            margin-top: 20px
+            overflow: visible
+            padding: 10px
+            position: relative
+            width: 570px
+            z-index: 2
+
+            &::after
+              background-color: $white
+              border: 1px solid $blue
+              border-bottom: 0
+              border-right: 0
+              content: ""
+              height: 20px
+              left: 20px
+              position: absolute
+              top: -11px
+              transform: rotate(45deg) skew(15deg, 15deg)
+              width: 20px
+
+            .close
+              font-size: 18px
+              overflow: auto
+
+              i
+                color: $blue
+                cursor: pointer
+                display: block
+                float: right
+
+            .title
+              font-size: 16px
+              margin-bottom: 5px
+
+            .input
+              border: 1px solid $text-dark-disabled
+              border-radius: 3px
+              color: $blue
+              font-size: 14px
+              height: 30px
+              outline: none
+              padding: 0 10px
+              width: 100%
+
+            .btns-wrapper
+              display: flex
+              margin-top: 20px
+
+              .btn-positive
+                margin-right: 20px
+
+        .packages
+          display: flex
+          flex-wrap: wrap
+
+        .package
+          align-items: center
+          background-color: $tag-back
+          display: flex
+          margin-bottom: 5px
+          margin-right: 5px
+          padding: 3px
+
+          i
+            color: $dark-gray
+            cursor: pointer
+            font-size: 16px
+            margin-left: 5px
+
+
+      .deny-button
+        i
+          color: $beige

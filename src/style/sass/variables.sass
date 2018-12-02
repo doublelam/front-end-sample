@@ -1,2 +1,54 @@
-$blue: blue
-$red: red
+@import colors
+
+@function shadow($level)
+  $level-map: (0.25, .2), (0.16, .3), (0.19, .3), (0.25, .2), (0.3, .2)
+  $prev: nth(nth($level-map, $level), 1)
+  $next: nth(nth($level-map, $level), 2)
+
+  @return 0 1px 3px transparentize($black, 1 - $prev), 0 1px 2px transparentize($black, 1 - $next)
+
+%btn
+  align-items: center
+  border: 0
+  cursor: pointer
+  display: flex
+  font-size: 14px
+  height: 30px
+  justify-content: center
+  outline: none
+  padding: 0 10px
+
+.btn-positive
+  @extend %btn
+
+  background-color: $blue
+  color: $beige
+
+  &:hover,
+  &:active
+    background-color: $dark-blue
+
+.btn-negative
+  @extend %btn
+
+  background-color: $gray
+  color: $beige
+
+  &:hover,
+  &:active
+    background-color: $dark-gray
+
+%back-white
+  background-color: $white
+
+$shadow-popup: 0 3px 5px transparentize($black, .7)
+
+// back-ground
+.back-white
+  @extend %back-white
+
+.back-yellow
+  background-color: $yellow
+
+.back-green
+  background-color: $green

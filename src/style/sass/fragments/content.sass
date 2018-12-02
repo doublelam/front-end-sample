@@ -1,0 +1,125 @@
+@import patch
+@import agent
+
+.content
+  background-color: $beige
+  flex-grow: 1
+  max-height: calc(100vh - 40px)
+  overflow: auto
+
+.patch-cog
+  background-color: $yellow
+
+.patch-coff
+  background-color: $green
+
+.profile-section
+  display: flex
+
+  .sect-wrapper
+    display: flex
+    flex-grow: 1
+    padding: 10px
+    width: 30%
+
+.type-list-wrapper
+  @extend %back-white
+
+  display: flex
+  flex-direction: row
+  flex-grow: 1
+  justify-content: space-around
+  padding: 10px 20px
+
+  .list-item
+    align-items: center
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    .name
+      font-size: 12px
+      padding: 10px
+
+    .count
+      font-size: 20px
+      padding: 10px
+
+.tab-section
+  padding: 0 10px
+
+  .tab-layout
+    @extend %back-white
+
+    align-items: stretch
+    display: flex
+    height: 50px
+
+  .tabs
+    align-items: stretch
+    display: flex
+
+    .tab-item
+      align-items: center
+      border-bottom: 3px solid $white
+      border-right: 1px solid $beige
+      cursor: pointer
+      display: flex
+      flex: 1
+      justify-content: center
+      min-width: 100px
+      padding: 0 20px
+      text-align: center
+
+      &.active
+        border-bottom: 3px solid $blue
+        color: $blue
+
+  .operate-area
+    display: flex
+    flex-grow: 1
+    justify-content: space-between
+    padding: 0 10px 0 30px
+
+    .search-area
+      align-items: center
+      display: flex
+
+      .icon-search
+        color: $text-dark-disabled
+        margin-right: -23px
+        position: relative
+        z-index: 1
+
+      .input
+        background-color: $beige
+        border: 0
+        font-size: 16px
+        height: 30px
+        outline: none
+        padding-left: 30px
+        position: relative
+
+    .sort-area
+      align-items: center
+      display: flex
+
+      .sort
+        cursor: pointer
+        padding: 0 10px
+
+        &.active
+          color: $blue
+
+.agents-container
+  padding: 10px
+
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(360deg)
+
+.rotation-ani
+  animation: rotate 2s linear infinite

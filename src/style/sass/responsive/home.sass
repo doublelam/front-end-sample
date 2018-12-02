@@ -1,0 +1,153 @@
+@import '../common.sass'
+
+// normal pc
+@media screen and (max-width: 1200px)
+
+  .type-list-wrapper
+    flex-direction: column
+
+    .list-item
+      flex-direction: row
+
+  .agent-item
+    .img-wrapper
+      display: none
+
+// tablet
+@media screen and (max-width: 1024px)
+
+  .home-header
+    .menu-icon
+      display: block
+
+  .content-container
+    .side-nav
+      height: 100%
+      left: -100%
+      position: fixed
+      top: 0
+      transition: left .5s
+      z-index: 2
+
+      .close-btn
+        display: block
+
+  .tab-section
+    .operate-area
+      .sort-area
+        display: none
+
+  .agent-item
+    .detail
+      display: flex
+
+      .row
+        display: flex
+
+        .modules
+          position: relative
+
+          .popup
+            position: fixed
+
+            .mask
+              background-color: transparentize($black, .3)
+
+            .content
+              left: 50%
+              position: fixed
+              top: 50%
+              transform: translate(-50%, -50%)
+
+              &::after
+                display: none
+
+// phone
+@media screen and (max-width: 768px)
+
+  .profile-section
+    flex-wrap: wrap
+
+  .sect-wrapper
+    &.type-items
+      width: 100%
+
+    .type-list-wrapper
+      flex-direction: row
+
+      .list-item
+        flex-direction: column
+
+  .tab-section
+    .tab-layout
+      background-color: transparent
+      flex-direction: column-reverse
+      height: auto
+
+      .tabs
+        background-color: $white
+        flex: none
+        height: 50px
+
+      .operate-area
+        background-color: $white
+        flex: none
+        height: 40px
+        margin-bottom: 10px
+        width: 100%
+
+        .search-area
+          flex: 1
+
+        .input
+          width: 100%
+
+  .agent-item
+    &.agent-building
+      border-left: 3px solid $yellow
+
+    &.agent-idle
+      border-left: 3px solid $green
+
+    .detail
+      .row
+        align-items: flex-start
+        flex-direction: column
+
+        .host,
+        .host-dns,
+        .dir
+          margin-bottom: 10px
+
+        .deny-button
+          align-self: flex-end
+
+        &:nth-child(1)
+          align-items: flex-start
+          flex-direction: column
+          padding-bottom: 0
+
+        .modules
+          .popup
+            .content
+              bottom: 0
+              left: 0
+              margin-left: 0
+              top: auto
+              transform: translate(0, 0)
+              width: 100%
+
+              .input
+                height: 40px
+
+              .btn-add
+                &.btn-positive
+                  flex: 1
+                  margin-bottom: 20px
+                  margin-right: 0
+
+              .btn-cancel
+                display: none
+
+      .badge
+        display: none

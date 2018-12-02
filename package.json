@@ -4,9 +4,9 @@
   "description": "A simple front end framework",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "node unittest",
-    "start": "open ",
-    "build-w": "nodemon --watch webpack.config.js --exec \"webpack --watch\""
+    "test": "mocha -r ts-node/register test.ts",
+    "view": "open 'dist/html/home.html'",
+    "build-w": "nodemon --watch webpack.config.js --exec \"webpack --watch -p\""
   },
   "keywords": [
     "front",
@@ -16,17 +16,21 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.10",
     "css-loader": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.5",
+    "mocha": "^5.2.0",
     "node-sass": "^4.10.0",
-    "sass-loader": "^7.1.0",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2",
-    "@types/node": "^10.12.10",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
+    "sass-loader": "^7.1.0",
     "ts-loader": "^5.3.1",
-    "typescript": "^3.1.6"
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
   }
 }
