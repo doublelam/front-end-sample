@@ -1,13 +1,14 @@
-# A simple front end framework sample
+# Thoughtworks recruiting homework
 
 ## Installation
 
 ```
   npm install
   npm run build-w
-  npm start
+  npm run view
 ```
-if would not modify anything, just run 
+If nothing have been modified, just run 
 ```
-  npm start
+  npm run view
 ```
+If it doesn't work on your system, just try open the file which under 'dist/html/home.html'
